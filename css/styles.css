@@ -1,0 +1,197 @@
+/* Porky's ¡Qué Cho! — estilos (mobile-first)
+   Paleta tomada del logo: rojo vivo, amarillo sol, guinda, crema y rosa del cerdito. */
+:root {
+  --rojo: #e3141c;
+  --rojo-rayo: #cf0f17;
+  --guinda: #5e0b10;
+  --amarillo: #ffd21f;
+  --amarillo-rayo: #ffc400;
+  --crema: #fff4dc;
+  --rosa: #ffc2cc;
+  --blanco: #ffffff;
+  --whatsapp: #15803d; /* 5:1 con texto blanco */
+  --texto: #2b0d0f;
+  --radio: 22px;
+  --borde: 3px solid var(--guinda);
+  --sello: 6px 6px 0 var(--guinda);
+  --titulo: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --cuerpo: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { margin: 0; font-family: var(--cuerpo); color: var(--texto); background: var(--crema); line-height: 1.6; font-size: 1.0625rem; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--titulo); font-weight: 400; line-height: 1.08; margin: 0 0 .5em; letter-spacing: .01em; }
+h1 { font-size: clamp(2.3rem, 9vw, 4.1rem); }
+h2 { font-size: clamp(2rem, 7vw, 3.1rem); color: var(--guinda); }
+h3 { font-size: 1.35rem; color: var(--guinda); }
+a { color: var(--rojo); }
+:focus-visible { outline: 4px solid var(--guinda); outline-offset: 3px; box-shadow: 0 0 0 7px var(--amarillo); }
+.contenedor { width: min(1140px, 100% - 2rem); margin-inline: auto; position: relative; }
+.saltar { position: absolute; left: -999px; top: 0; background: var(--amarillo); padding: .6rem 1rem; z-index: 100; font-weight: 700; }
+.saltar:focus { left: 0; }
+section { position: relative; padding: 4rem 0; }
+.subtitulo { max-width: 60ch; margin: 0 0 2rem; font-size: 1.1rem; }
+
+/* Etiqueta pequeña sobre los títulos */
+.etiqueta { display: inline-block; background: var(--amarillo); color: var(--guinda); border: 2px solid var(--guinda); border-radius: 999px; padding: .15rem .9rem; font: 700 .85rem var(--cuerpo); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .8rem; }
+
+/* Fondos de rayos (como el banner del combo) */
+.rayos-rojo { background: repeating-conic-gradient(from 0deg at var(--cx, 50%) var(--cy, 50%), var(--rojo) 0deg 9deg, var(--rojo-rayo) 9deg 18deg); }
+.rayos-guinda { background: repeating-conic-gradient(from 0deg at var(--cx, 50%) var(--cy, 50%), #5e0b10 0deg 9deg, #520910 9deg 18deg); }
+.rayos-amarillo { background: repeating-conic-gradient(from 0deg at var(--cx, 50%) var(--cy, 50%), var(--amarillo) 0deg 9deg, var(--amarillo-rayo) 9deg 18deg); }
+
+/* Olas que unen una sección con la siguiente */
+.ola { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: clamp(34px, 6vw, 80px); display: block; pointer-events: none; }
+.ola path { fill: currentColor; }
+.ola--crema { color: var(--crema); }
+.ola--amarillo { color: var(--amarillo); }
+.ola--rosa { color: var(--rosa); }
+.ola--rojo { color: var(--rojo); }
+.ola--guinda { color: var(--guinda); }
+
+/* Íconos SVG decorativos */
+.icono { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Botones (estilo sello: borde guinda y sombra sólida) */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 50px; padding: .7rem 1.5rem; border-radius: 999px; font: 800 1.05rem var(--cuerpo); text-decoration: none; border: var(--borde); box-shadow: 0 5px 0 var(--guinda); cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; text-align: center; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--guinda); }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--guinda); }
+.btn-wa { background: var(--whatsapp); color: #fff; }
+.btn-sec { background: var(--amarillo); color: var(--guinda); }
+.btn-peq { min-height: 46px; padding: .5rem 1.1rem; font-size: .98rem; }
+
+/* Cabecera */
+.cabecera { position: sticky; top: 0; z-index: 50; background: var(--guinda); color: #fff; border-bottom: 4px solid var(--amarillo); }
+.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 1rem; }
+.marca { display: flex; align-items: center; gap: .6rem; color: var(--amarillo); text-decoration: none; font-family: var(--titulo); font-size: 1.4rem; line-height: 1; }
+.marca img { width: 54px; height: 54px; margin: -4px 0; filter: drop-shadow(0 2px 3px rgba(0,0,0,.4)); }
+.menu { display: none; gap: 1.6rem; }
+.menu a { color: #fff; text-decoration: none; font-weight: 800; padding: .5rem 0; border-bottom: 3px solid transparent; }
+.menu a:hover { color: var(--amarillo); border-bottom-color: var(--amarillo); }
+.cabecera .btn { background: var(--amarillo); color: var(--guinda); border-color: var(--amarillo); box-shadow: 0 4px 0 #b88a00; }
+
+/* Inicio (hero) */
+.inicio { --cx: 50%; --cy: 30%; padding: 2.2rem 0 6.5rem; color: var(--guinda); overflow: hidden; }
+.inicio .contenedor { display: grid; gap: 1.2rem; align-items: center; text-align: center; }
+.inicio .kicker { display: inline-block; background: var(--guinda); color: var(--amarillo); border: 2px solid var(--guinda); border-radius: 999px; padding: .2rem 1rem; font: 800 .9rem var(--cuerpo); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 1rem; }
+.inicio h1 { color: var(--guinda); }
+.inicio h1 em { font-style: normal; color: var(--rojo); }
+.inicio .lema { font-size: 1.2rem; max-width: 42ch; margin: 0 auto 1.4rem; font-weight: 700; }
+.inicio .btn-sec { background: #fff; }
+.inicio .acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; }
+.hero-logo { position: relative; order: -1; width: min(330px, 76vw); margin-inline: auto; }
+.hero-logo img { width: 100%; filter: drop-shadow(0 8px 10px rgba(94,11,16,.28)); }
+
+/* Franja de pegatinas */
+.franja { padding: 0 0 4.5rem; margin-top: -2.4rem; z-index: 2; }
+.franja ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.pegatina { display: flex; align-items: center; gap: 1rem; background: #fff; border: var(--borde); border-radius: var(--radio); box-shadow: var(--sello); padding: .9rem 1.1rem; font-weight: 800; color: var(--guinda); }
+.pegatina .disco { width: 3rem; height: 3rem; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--amarillo); border: 3px solid var(--guinda); }
+.pegatina .icono { width: 1.5rem; height: 1.5rem; }
+
+/* Combo */
+.combo { --cx: 22%; --cy: 50%; padding: 4.5rem 0 6.5rem; }
+.combo .contenedor { display: grid; gap: 2rem; align-items: center; }
+.combo .foto { position: relative; width: min(480px, 92%); margin-inline: auto; }
+.combo .foto img { border: 5px solid var(--guinda); border-radius: var(--radio); box-shadow: 10px 10px 0 var(--guinda); transform: rotate(-2deg); background: var(--rojo); }
+.combo-compra { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; }
+.precio-combo { margin: 0; background: var(--amarillo); color: var(--rojo); border: 4px solid var(--guinda); border-radius: var(--radio); box-shadow: 5px 5px 0 var(--guinda); padding: .3rem 1.1rem .4rem; transform: rotate(-2deg); font: 400 clamp(2.6rem, 9vw, 3.6rem) var(--titulo); line-height: 1.05; }
+.precio-combo small { display: block; color: var(--guinda); font: 800 .8rem var(--cuerpo); text-transform: uppercase; letter-spacing: .08em; }
+.combo h2 { color: var(--amarillo); text-shadow: 3px 3px 0 var(--guinda); font-size: clamp(2.3rem, 9vw, 3.8rem); }
+.combo .intro { font-weight: 800; color: #fff; font-size: 1.15rem; }
+.combo ul { list-style: none; margin: 1.2rem 0 1.6rem; padding: 0; display: grid; gap: .5rem; }
+.combo li { display: flex; align-items: center; gap: .7rem; background: #fff; border: 2.5px solid var(--guinda); border-radius: 999px; padding: .4rem 1rem .4rem .5rem; font-weight: 800; color: var(--guinda); }
+.combo li .icono { width: 1.9rem; height: 1.9rem; padding: .3rem; border-radius: 50%; background: var(--rojo); color: #fff; stroke-width: 3; }
+
+/* Catálogo */
+.catalogo { background: var(--crema); background-image: radial-gradient(rgba(227,20,28,.09) 2px, transparent 2.5px); background-size: 26px 26px; padding-bottom: 7rem; }
+.rejilla { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); }
+.tarjeta { position: relative; background: #fff; border: var(--borde); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sello); display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
+.tarjeta .foto { position: relative; border-bottom: var(--borde); }
+.tarjeta img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; }
+.precio-sello { position: absolute; right: .6rem; top: .6rem; background: var(--amarillo); color: var(--guinda); border: 3px solid var(--guinda); border-radius: 999px; padding: .15rem .8rem; font: 400 1.35rem var(--titulo); line-height: 1.3; box-shadow: 2px 2px 0 var(--guinda); transform: rotate(-3deg); white-space: nowrap; }
+.precio-sello small { font: 800 .75rem var(--cuerpo); }
+.tarjeta .cuerpo { padding: 1.4rem 1rem 1.1rem; display: flex; flex-direction: column; gap: .35rem; flex: 1; }
+.tarjeta .cuerpo p { margin: 0 0 .6rem; font-size: .98rem; flex: 1; }
+.tarjeta h3 { margin: 0; }
+@media (hover: hover) { .tarjeta:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--guinda); } }
+
+.otros { margin-top: 3rem; background: var(--guinda); color: #fff; border: var(--borde); border-radius: var(--radio); padding: 1.6rem 1.3rem; box-shadow: 6px 6px 0 var(--rojo); }
+.otros h3 { color: var(--amarillo); font-size: 1.7rem; }
+.otros ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 2.5rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.otros li { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 2px dotted rgba(255,210,31,.6); padding: .65rem 0; font-weight: 700; }
+.otros li b { color: var(--amarillo); font: 400 1.2rem var(--titulo); white-space: nowrap; }
+.nota { font-size: .92rem; margin: 1rem 0 0; opacity: .92; }
+
+/* Cómo pedir */
+.pedir { background: var(--rosa); padding-bottom: 7rem; }
+.pasos { counter-reset: paso; display: grid; gap: 1.2rem; padding: 0; list-style: none; margin: 0 0 2rem; }
+.pasos li { counter-increment: paso; background: #fff; border: var(--borde); border-radius: var(--radio); padding: 1.2rem 1.2rem 1.2rem 4.8rem; position: relative; box-shadow: var(--sello); }
+.pasos li::before { content: counter(paso); position: absolute; left: 1rem; top: 1rem; width: 3rem; height: 3rem; border-radius: 50%; background: var(--rojo); color: var(--amarillo); border: 3px solid var(--guinda); display: grid; place-items: center; font: 400 1.6rem var(--titulo); }
+.pasos b { font: 400 1.25rem var(--titulo); color: var(--guinda); }
+.zonas { display: flex; flex-wrap: wrap; gap: .6rem; padding: 0; list-style: none; margin: .8rem 0 0; }
+.zonas li { background: var(--amarillo); color: var(--guinda); border: 2.5px solid var(--guinda); border-radius: 999px; padding: .3rem 1.1rem; font-weight: 800; box-shadow: 2px 2px 0 var(--guinda); }
+
+/* Nosotros */
+.nosotros { --cx: 80%; --cy: 40%; color: #fff; padding-bottom: 7rem; overflow: hidden; }
+.nosotros .contenedor { display: grid; gap: 2rem; align-items: center; }
+.nosotros h2 { color: var(--amarillo); }
+.nosotros p { font-size: 1.1rem; max-width: 56ch; font-weight: 600; text-shadow: 0 1px 2px rgba(60,0,5,.45); }
+.nosotros .foto img { border: 5px solid var(--amarillo); border-radius: var(--radio); box-shadow: 10px 10px 0 var(--rojo); transform: rotate(1.5deg); }
+
+/* Contacto */
+.contacto { --cx: 25%; --cy: 50%; padding-bottom: 4rem; }
+.contacto .contenedor { display: grid; gap: 1.5rem; align-items: center; text-align: center; }
+.contacto .telefono { font: 400 clamp(2.2rem, 9vw, 3.4rem) var(--titulo); color: var(--rojo); text-decoration: none; display: inline-flex; align-items: center; min-height: 52px; margin: .2rem 0 1rem; text-shadow: 2px 2px 0 var(--guinda); }
+.contacto .telefono:hover { color: #fff; }
+.contacto p { font-weight: 800; color: var(--guinda); font-size: 1.15rem; margin: 0 0 .4rem; }
+
+/* Pie */
+.pie { background: var(--guinda); color: #fff; padding: 2.2rem 1rem 6rem; text-align: center; border-top: 5px solid var(--amarillo); }
+.pie img { width: 96px; margin: 0 auto .6rem; }
+.pie p { margin: .25rem 0; }
+.pie a { color: var(--amarillo); font-weight: 800; display: inline-block; padding: .7rem .4rem; }
+
+/* WhatsApp flotante */
+.wa-flotante { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; transition: opacity .25s ease, transform .25s ease; }
+.js .wa-flotante:not(.visible) { opacity: 0; transform: translateY(20px); pointer-events: none; visibility: hidden; }
+
+/* Aparición suave al hacer scroll (solo con JS) */
+.js .aparece { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+.js .aparece.visible { opacity: 1; transform: none; }
+
+/* Celular: catálogo en dos columnas */
+@media (max-width: 559px) {
+  .rejilla { grid-template-columns: repeat(2, 1fr); gap: 1.2rem .8rem; }
+  .tarjeta { box-shadow: 4px 4px 0 var(--guinda); }
+  .tarjeta .cuerpo { padding: 1.25rem .65rem .8rem; }
+  .tarjeta h3 { font-size: 1.15rem; }
+  .tarjeta .cuerpo p { font-size: .86rem; }
+  .precio-sello { font-size: 1.05rem; padding: .1rem .6rem; right: .4rem; }
+  .tarjeta .btn { padding-inline: .4rem; font-size: .88rem; }
+}
+
+@media (min-width: 760px) {
+  .menu { display: flex; }
+  .franja ul { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .pasos { grid-template-columns: repeat(3, 1fr); }
+  .combo .contenedor { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
+  .nosotros .contenedor { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
+  .pie { padding-bottom: 2.2rem; }
+}
+@media (min-width: 900px) {
+  .inicio { --cx: 74%; --cy: 48%; padding: 3.5rem 0 8rem; }
+  .inicio .contenedor { grid-template-columns: 1.15fr 1fr; text-align: left; gap: 2rem; }
+  .inicio .lema { margin-inline: 0; }
+  .inicio .acciones { justify-content: flex-start; }
+  .hero-logo { order: 0; width: min(470px, 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .tarjeta, .wa-flotante { transition: none; }
+  .tarjeta:hover { transform: none; }
+  .js .aparece { opacity: 1; transform: none; transition: none; }
+}

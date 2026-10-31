@@ -1,0 +1,5 @@
+# Fuera del sitio publicado
+.claude/
+originales/
+Thumbs.db
+.DS_Store
