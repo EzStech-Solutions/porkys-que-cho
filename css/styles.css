@@ -93,7 +93,9 @@ section { position: relative; padding: 4rem 0; }
 
 /* Combo */
 .combo { --cx: 22%; --cy: 50%; padding: 4.5rem 0 6.5rem; }
-.combo .contenedor { display: grid; gap: 2rem; align-items: center; }
+.combo .contenedor { display: grid; gap: 5rem; }
+.combo-item { display: grid; gap: 2rem; align-items: center; }
+.combo-item--inv .foto img { transform: rotate(2deg); }
 .combo .foto { position: relative; width: min(480px, 92%); margin-inline: auto; }
 .combo .foto img { border: 5px solid var(--guinda); border-radius: var(--radio); box-shadow: 10px 10px 0 var(--guinda); transform: rotate(-2deg); background: var(--rojo); }
 .combo-compra { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; }
@@ -177,7 +179,8 @@ section { position: relative; padding: 4rem 0; }
   .menu { display: flex; }
   .franja ul { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
   .pasos { grid-template-columns: repeat(3, 1fr); }
-  .combo .contenedor { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
+  .combo-item { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
+  .combo-item--inv .foto { order: 2; }
   .nosotros .contenedor { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
   .pie { padding-bottom: 2.2rem; }
 }
