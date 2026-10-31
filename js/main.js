@@ -169,15 +169,36 @@ function mensaje() {
   const nombre = $('#cli-nombre').value.trim();
   const direccion = $('#cli-direccion').value.trim();
   const notas = $('#cli-notas').value.trim();
-  if (nombre || direccion || notas) partes.push('');
-  if (nombre) partes.push(`Nombre: ${nombre}`);
-  if (direccion) partes.push(`Dirección y barrio: ${direccion}`);
+  partes.push('', `Nombre: ${nombre}`, `Dirección y barrio: ${direccion}`);
   if (notas) partes.push(`Notas: ${notas}`);
   return partes.join('\n');
 }
 
+// Nombre y dirección son obligatorios: si falta alguno se avisa junto al campo y no se envía
+function validarDatos() {
+  const campos = [['#cli-nombre', '#err-nombre'], ['#cli-direccion', '#err-direccion']];
+  let primeroInvalido = null;
+  campos.forEach(([campo, error]) => {
+    const entrada = $(campo);
+    const vacio = entrada.value.trim() === '';
+    $(error).hidden = !vacio;
+    entrada.setAttribute('aria-invalid', vacio ? 'true' : 'false');
+    if (vacio && !primeroInvalido) primeroInvalido = entrada;
+  });
+  if (primeroInvalido) primeroInvalido.focus();
+  return !primeroInvalido;
+}
+['#cli-nombre', '#cli-direccion'].forEach((campo) => {
+  $(campo).addEventListener('input', () => {
+    if ($(campo).value.trim() !== '') {
+      $(campo).setAttribute('aria-invalid', 'false');
+      $(campo === '#cli-nombre' ? '#err-nombre' : '#err-direccion').hidden = true;
+    }
+  });
+});
+
 $('#enviar').addEventListener('click', () => {
-  if (!cantidadItems()) return;
+  if (!cantidadItems() || !validarDatos()) return;
   const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje())}`;
   window.open(url, '_blank', 'noopener');
 });

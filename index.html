@@ -298,10 +298,12 @@
         <p class="aviso">El valor final depende del peso exacto de cada corte. El domicilio te lo confirmamos por WhatsApp.</p>
 
         <div class="datos">
-          <label for="cli-nombre">Tu nombre <span>(opcional)</span></label>
-          <input id="cli-nombre" type="text" autocomplete="name">
-          <label for="cli-direccion">Dirección, barrio y municipio <span>(opcional)</span></label>
-          <input id="cli-direccion" type="text" autocomplete="street-address">
+          <label for="cli-nombre">Tu nombre <span>(obligatorio)</span></label>
+          <input id="cli-nombre" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-nombre">
+          <p class="error" id="err-nombre" role="alert" hidden>Escribe tu nombre para poder enviar el pedido.</p>
+          <label for="cli-direccion">Dirección, barrio y municipio <span>(obligatorio)</span></label>
+          <input id="cli-direccion" type="text" autocomplete="street-address" required aria-required="true" aria-describedby="err-direccion" placeholder="Ej: Calle 45 #20-10, Cabecera, Bucaramanga">
+          <p class="error" id="err-direccion" role="alert" hidden>Escribe tu dirección, barrio y municipio para llevarte el pedido.</p>
           <label for="cli-notas">Notas <span>(opcional)</span></label>
           <textarea id="cli-notas" rows="2" placeholder="Ej: cortar la costilla en tiras"></textarea>
         </div>

@@ -288,3 +288,7 @@ section { position: relative; padding: 4rem 0; }
 .barra-pedido .btn { padding: .55rem 1rem; gap: .5rem; }
 #barra-texto { white-space: nowrap; }
 .barra-pedido .ver { white-space: nowrap; }
+
+/* Campos obligatorios del pedido */
+.error { margin: .1rem 0 0; color: #b00020; font-weight: 800; font-size: .92rem; }
+.datos input[aria-invalid="true"] { border-color: #b00020; box-shadow: 0 0 0 3px rgba(176, 0, 32, .2); }
