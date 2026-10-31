@@ -155,6 +155,8 @@ function abrirPedido(e) {
   if (typeof dialogo.showModal === 'function') dialogo.showModal();
 }
 btnPedido?.addEventListener('click', abrirPedido);
+// El botón flotante también abre "Mi pedido": así todo pedido pasa por nombre y dirección
+$('.wa-flotante')?.addEventListener('click', abrirPedido);
 $('#barra-abrir')?.addEventListener('click', abrirPedido);
 $$('[data-cerrar]', dialogo).forEach((b) => b.addEventListener('click', () => dialogo.close()));
 dialogo.addEventListener('click', (e) => { if (e.target === dialogo) dialogo.close(); });
