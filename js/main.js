@@ -167,7 +167,7 @@ $('#vaciar').addEventListener('click', () => {
 
 function mensaje() {
   const lineas = lineasPedido().map(({ p, cant }) => `• ${p.nombre}: ${num(cant)} ${p.unidad} (${pesos(p.precio * cant)})`);
-  const partes = ['Hola Porky\'s, quiero hacer este pedido:', '', ...lineas, '', `Subtotal estimado: ${pesos(totalPedido())}`, '(El valor final depende del peso exacto. Domicilio por confirmar.)'];
+  const partes = ['Hola Porky\'s, quiero hacer este pedido:', '', ...lineas, '', `Subtotal estimado: ${pesos(totalPedido())}`, '(El valor final depende del peso exacto. El domicilio es gratis.)'];
   const nombre = $('#cli-nombre').value.trim();
   const direccion = $('#cli-direccion').value.trim();
   const notas = $('#cli-notas').value.trim();
