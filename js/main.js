@@ -207,6 +207,32 @@ $('#enviar').addEventListener('click', () => {
 
 pintar();
 
+/* ---------- Carrusel de combos (celular): puntos que siguen y llevan a cada combo ---------- */
+const combos = $('#combos');
+const puntos = $$('.punto');
+if (combos && puntos.length) {
+  const tarjetas = $$('.combo-card', combos);
+  const marcar = (i) => puntos.forEach((p, j) => p.setAttribute('aria-current', j === i ? 'true' : 'false'));
+  puntos.forEach((p, i) => p.addEventListener('click', () => {
+    tarjetas[i].scrollIntoView({ behavior: reducirMovimiento ? 'auto' : 'smooth', inline: 'center', block: 'nearest' });
+  }));
+  let cuadro;
+  combos.addEventListener('scroll', () => {
+    cancelAnimationFrame(cuadro);
+    cuadro = requestAnimationFrame(() => {
+      const c = combos.getBoundingClientRect();
+      const centro = c.left + c.width / 2;
+      let mejor = 0, distancia = Infinity;
+      tarjetas.forEach((t, i) => {
+        const r = t.getBoundingClientRect();
+        const d = Math.abs(r.left + r.width / 2 - centro);
+        if (d < distancia) { distancia = d; mejor = i; }
+      });
+      marcar(mejor);
+    });
+  }, { passive: true });
+}
+
 /* ---------- Botón flotante de WhatsApp: aparece al salir del inicio ---------- */
 const flotante = $('.wa-flotante');
 const inicio = $('.inicio');

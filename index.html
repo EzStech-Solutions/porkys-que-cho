@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=6">
+  <link rel="stylesheet" href="css/styles.css?v=9">
 
   <script type="application/ld+json">
   {
@@ -86,55 +86,61 @@
       <svg class="ola ola--rojo" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 260 0 480 90 760 44 C 1000 6 1240 80 1440 40 L1440 90 L0 90 Z"/></svg>
     </section>
 
-    <!-- COMBO: se edita seguido. Cambia el título, la lista, el precio (data-precio y .precio-combo) y la foto (img/combo-especial.jpg). -->
+    <!-- COMBOS: se editan seguido. Cada tarjeta (.combo-card) es un combo: cambia nombre, lista, precio (data-precio y .precio-combo) y foto.
+         Para agregar otro combo, copia una tarjeta completa, cambia su data-id y añade un punto más en .combos-puntos. -->
     <section class="combo rayos-rojo" id="combo">
       <div class="contenedor">
-       <div class="combo-item">
-        <div class="foto">
-          <img src="img/combo-especial.jpg" alt="Combo especial de Porky's con pierna, bondiola, rellenas, chorizos, costilla y tocino" width="900" height="900" loading="lazy">
-        </div>
-        <div>
-          <span class="etiqueta">Oferta de la casa</span>
-          <h2>Combo especial</h2>
-          <p class="intro">Todo lo mejor para tu parrilla y para compartir en familia.</p>
-          <ul>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pierna, 2 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bondiola, 1 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rellenas, 5 unidades</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chorizos, 10 unidades</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Costilla, 1 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tocino carnudo, 1 lb</li>
-          </ul>
-          <div class="combo-compra" data-producto data-id="combo" data-nombre="Combo especial" data-precio="50000" data-unidad="combo" data-paso="1" data-inicio="1">
-            <p class="precio-combo"><small>¡Por solo!</small>$50.000</p>
-            <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20el%20combo%20especial%20de%20%2450.000" target="_blank" rel="noopener">Pedir el combo</a>
-          </div>
-        </div>
-       </div>
+        <span class="etiqueta">Ofertas de la casa</span>
+        <h2>Nuestros combos</h2>
+        <div class="combos" id="combos" role="region" aria-roledescription="carrusel" aria-label="Combos disponibles" tabindex="0">
+          <article class="combo-card" aria-label="Combo especial">
+            <div class="combo-foto">
+              <img src="img/combo-especial.jpg" alt="Combo especial de Porky's con pierna, bondiola, rellenas, chorizos, costilla y tocino" width="900" height="900" loading="lazy">
+            </div>
+            <div class="combo-cuerpo">
+              <h3>Combo especial</h3>
+              <ul class="combo-lista">
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pierna 2 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bondiola 1 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rellenas 5 und</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chorizos 10 und</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Costilla 1 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tocino carnudo 1 lb</li>
+              </ul>
+              <div class="combo-compra" data-producto data-id="combo" data-nombre="Combo especial" data-precio="50000" data-unidad="combo" data-paso="1" data-inicio="1">
+                <p class="precio-combo"><small>¡Por solo!</small>$50.000</p>
+                <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20el%20combo%20especial%20de%20%2450.000" target="_blank" rel="noopener">Pedir el combo</a>
+              </div>
+            </div>
+          </article>
 
-       <!-- COMBO PAISA (nueva promo): se edita igual que el anterior -->
-       <div class="combo-item combo-item--inv">
-        <div class="foto">
-          <img src="img/combo-paisa.jpg" alt="Combo Paisa de Porky's con pierna molida, chuleta, pezuña, chorizos, costilla y tocino carnudo" width="720" height="880" loading="lazy">
+          <!-- COMBO PAISA (nueva promo) -->
+          <article class="combo-card" aria-label="Combo Paisa">
+            <div class="combo-foto">
+              <img src="img/combo-paisa.jpg" alt="Combo Paisa de Porky's con pierna molida, chuleta, pezuña, chorizos, costilla y tocino carnudo" width="720" height="880" loading="lazy">
+              <span class="combo-nuevo">Nueva promo</span>
+            </div>
+            <div class="combo-cuerpo">
+              <h3>Combo Paisa</h3>
+              <ul class="combo-lista">
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pierna molida 1 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chuleta 2 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pezuña 1 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chorizos 12 und</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Costilla 1 lb</li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tocino carnudo 1 lb</li>
+              </ul>
+              <div class="combo-compra" data-producto data-id="combo-paisa" data-nombre="Combo Paisa" data-precio="50000" data-unidad="combo" data-paso="1" data-inicio="1">
+                <p class="precio-combo"><small>¡Por solo!</small>$50.000</p>
+                <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20el%20combo%20paisa%20de%20%2450.000" target="_blank" rel="noopener">Pedir el combo</a>
+              </div>
+            </div>
+          </article>
         </div>
-        <div>
-          <span class="etiqueta">Nueva promo</span>
-          <h2>Combo Paisa</h2>
-          <p class="intro">Todo lo mejor para tu parrilla y para compartir en familia.</p>
-          <ul>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pierna molida, 1 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chuleta, 2 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pezuña, 1 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chorizos, 12 unidades</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Costilla, 1 lb</li>
-            <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tocino carnudo, 1 lb</li>
-          </ul>
-          <div class="combo-compra" data-producto data-id="combo-paisa" data-nombre="Combo Paisa" data-precio="50000" data-unidad="combo" data-paso="1" data-inicio="1">
-            <p class="precio-combo"><small>¡Por solo!</small>$50.000</p>
-            <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20el%20combo%20paisa%20de%20%2450.000" target="_blank" rel="noopener">Pedir el combo</a>
-          </div>
+        <div class="combos-puntos" role="group" aria-label="Elegir combo">
+          <button type="button" class="punto" aria-label="Ver Combo especial" aria-current="true"></button>
+          <button type="button" class="punto" aria-label="Ver Combo Paisa"></button>
         </div>
-       </div>
       </div>
       <svg class="ola ola--crema" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 90 480 0 720 40 C 960 80 1200 10 1440 45 L1440 90 L0 90 Z"/></svg>
     </section>
@@ -343,6 +349,6 @@
     </div>
   </dialog>
 
-  <script src="js/main.js?v=6" defer></script>
+  <script src="js/main.js?v=8" defer></script>
 </body>
 </html>
