@@ -120,8 +120,8 @@ section { position: relative; padding: 4rem 0; }
 
 .otros { margin-top: 3rem; background: var(--guinda); color: #fff; border: var(--borde); border-radius: var(--radio); padding: 1.6rem 1.3rem; box-shadow: 6px 6px 0 var(--rojo); }
 .otros h3 { color: var(--amarillo); font-size: 1.7rem; }
-.otros ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 2.5rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-.otros li { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 2px dotted rgba(255,210,31,.6); padding: .65rem 0; font-weight: 700; }
+.otros ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 2.5rem; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); }
+.otros li { display: flex; align-items: center; gap: .8rem; border-bottom: 2px dotted rgba(255,210,31,.6); padding: .65rem 0; font-weight: 700; }
 .otros li b { color: var(--amarillo); font: 400 1.2rem var(--titulo); white-space: nowrap; }
 .nota { font-size: .92rem; margin: 1rem 0 0; opacity: .92; }
 
@@ -195,3 +195,96 @@ section { position: relative; padding: 4rem 0; }
   .tarjeta:hover { transform: none; }
   .js .aparece { opacity: 1; transform: none; transition: none; }
 }
+
+/* ===== Armador de pedidos ===== */
+[hidden] { display: none !important; }
+
+.o-nombre { flex: 1; }
+
+/* Control de cantidad (botón "Agregar" que se vuelve contador) */
+.cantidad { display: contents; }
+.tarjeta .cantidad, .combo-compra .cantidad { display: block; }
+.paso-cantidad { display: flex; align-items: center; justify-content: space-between; gap: .3rem; border: var(--borde); border-radius: 999px; background: #fff; padding: .2rem; }
+.paso-btn { width: 44px; height: 44px; flex: none; border-radius: 50%; border: 0; background: var(--rojo); color: #fff; font: 800 1.6rem/1 var(--cuerpo); cursor: pointer; display: grid; place-items: center; padding: 0 0 .15rem; }
+.paso-btn:hover { background: var(--guinda); }
+.paso-btn:active { transform: scale(.94); }
+.paso-cantidad input { width: 100%; min-width: 0; flex: 1; border: 0; background: transparent; text-align: center; font: 800 1.15rem var(--cuerpo); color: var(--guinda); -moz-appearance: textfield; appearance: textfield; }
+.paso-cantidad input::-webkit-outer-spin-button, .paso-cantidad input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.paso-cantidad input:focus-visible { outline-offset: 0; box-shadow: none; }
+.tarjeta .paso-cantidad { margin-top: .6rem; }
+.paso-cantidad--compacto .paso-btn { width: 40px; height: 40px; font-size: 1.4rem; }
+.paso-cantidad--compacto { flex: none; width: 150px; }
+.otros .btn-agregar { min-height: 44px; padding: .4rem 1rem; box-shadow: 0 3px 0 var(--amarillo); border-color: var(--amarillo); }
+.otros .paso-cantidad { border-color: var(--amarillo); }
+.combo-compra .cantidad { min-width: 200px; flex: 0 1 240px; }
+
+/* Insignia con la cantidad de productos en la cabecera */
+.insignia { display: inline-grid; place-items: center; min-width: 1.4rem; height: 1.4rem; margin-left: .2rem; padding: 0 .3rem; border-radius: 999px; background: var(--rojo); color: #fff; font-size: .85rem; line-height: 1; }
+
+/* Barra del pedido (abajo) */
+.barra-pedido { position: fixed; left: 0; right: 0; bottom: .8rem; z-index: 65; display: flex; justify-content: center; padding: 0 1rem; pointer-events: none; }
+.barra-pedido .btn { pointer-events: auto; width: min(560px, 100%); justify-content: space-between; background: var(--amarillo); }
+.barra-pedido #barra-texto { flex: 1; text-align: left; }
+.barra-pedido .ver { background: var(--guinda); color: var(--amarillo); border-radius: 999px; padding: .15rem .8rem; font-size: .9rem; }
+.con-pedido .wa-flotante { display: none; }
+.pie { padding-bottom: 7rem; }
+
+/* Ventana "Mi pedido" */
+.dialogo { width: min(580px, calc(100% - 1rem)); max-height: min(92vh, 900px); margin: auto; padding: 0; border: 4px solid var(--guinda); border-radius: var(--radio); background: var(--crema); color: var(--texto); box-shadow: 8px 8px 0 var(--guinda); overflow: hidden; }
+.dialogo::backdrop { background: rgba(94, 11, 16, .65); }
+.dialogo-caja { display: flex; flex-direction: column; max-height: min(92vh, 900px); overflow-y: auto; padding: 1.2rem 1.2rem 1.4rem; }
+.dialogo-cab { display: flex; align-items: center; justify-content: space-between; margin-bottom: .6rem; }
+.dialogo-cab h2 { margin: 0; font-size: 2rem; }
+.cerrar { width: 44px; height: 44px; border-radius: 50%; border: var(--borde); background: #fff; color: var(--guinda); font: 800 1.7rem/1 var(--cuerpo); cursor: pointer; display: grid; place-items: center; padding: 0 0 .2rem; }
+.vacio { background: #fff; border: 2.5px dashed var(--guinda); border-radius: var(--radio); padding: 1.1rem; margin: .4rem 0 1rem; font-weight: 700; color: var(--guinda); }
+.lineas { list-style: none; margin: 0 0 .8rem; padding: 0; display: grid; gap: .7rem; }
+.linea { display: grid; grid-template-columns: 1fr auto; gap: .3rem .8rem; align-items: center; background: #fff; border: 2.5px solid var(--guinda); border-radius: 16px; padding: .7rem .8rem; }
+.linea-info { display: grid; line-height: 1.3; }
+.linea-info b { font: 400 1.2rem var(--titulo); color: var(--guinda); }
+.linea-info span { font-size: .9rem; }
+.linea-pago { font: 400 1.25rem var(--titulo); color: var(--rojo); text-align: right; }
+.linea-acciones { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
+.quitar { min-height: 44px; padding: 0 .6rem; background: none; border: 0; color: var(--rojo); font: 800 .95rem var(--cuerpo); text-decoration: underline; cursor: pointer; }
+.total-fila { display: flex; justify-content: space-between; align-items: baseline; margin: 0; padding: .8rem 1rem; background: var(--guinda); color: #fff; border-radius: 14px; font-weight: 800; }
+.total-fila b { font: 400 1.9rem var(--titulo); color: var(--amarillo); }
+.aviso { font-size: .92rem; margin: .6rem 0 1rem; }
+.datos { display: grid; gap: .3rem; margin-bottom: 1rem; }
+.datos label { font-weight: 800; color: var(--guinda); margin-top: .4rem; }
+.datos label span { font-weight: 600; opacity: .75; }
+.datos input, .datos textarea { width: 100%; min-height: 46px; border: 2.5px solid var(--guinda); border-radius: 12px; padding: .55rem .8rem; font: 600 1rem var(--cuerpo); background: #fff; color: var(--texto); }
+.dialogo-acciones { display: grid; gap: .6rem; margin-top: .4rem; }
+.dialogo-acciones .btn { width: 100%; }
+.btn:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: 0 5px 0 var(--guinda); }
+.btn-texto { min-height: 44px; background: none; border: 0; color: var(--guinda); font: 800 .95rem var(--cuerpo); text-decoration: underline; cursor: pointer; }
+
+/* Créditos de fotos */
+.creditos { max-width: 640px; margin: 1rem auto; text-align: left; font-size: .9rem; }
+.creditos summary { cursor: pointer; font-weight: 800; color: var(--amarillo); text-align: center; padding: .6rem; min-height: 44px; }
+.creditos ul { padding-left: 1.2rem; }
+.creditos li { margin: .2rem 0; }
+
+@media (max-width: 559px) {
+  .otros { padding: 1.2rem .9rem; }
+  .paso-cantidad--compacto { width: 138px; }
+  .paso-cantidad--compacto .paso-btn { width: 38px; height: 38px; }
+}
+@media (min-width: 760px) {
+  .pie { padding-bottom: 6rem; }
+}
+
+/* El botón de enviar queda visible al final de la ventana */
+.dialogo-acciones { position: sticky; bottom: -1.4rem; background: var(--crema); padding: .7rem 0 .2rem; margin-top: .4rem; box-shadow: 0 -10px 12px -6px var(--crema); }
+.tarjeta .btn-agregar, .combo-compra .btn-agregar { width: 100%; }
+
+/* Cabecera en celular: nada se parte en dos líneas */
+.cabecera .btn { white-space: nowrap; }
+.paso-cantidad input { min-height: 44px; }
+@media (max-width: 559px) {
+  .marca { font-size: 1.1rem; min-width: 0; gap: .45rem; }
+  .marca img { width: 46px; height: 46px; }
+  .cabecera .contenedor { gap: .6rem; }
+  .cabecera .btn-peq { padding: .45rem .85rem; font-size: .92rem; }
+}
+.barra-pedido .btn { padding: .55rem 1rem; gap: .5rem; }
+#barra-texto { white-space: nowrap; }
+.barra-pedido .ver { white-space: nowrap; }

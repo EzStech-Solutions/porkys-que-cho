@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Porky's ¡Qué Cho! | Carne de cerdo a domicilio en Bucaramanga</title>
-  <meta name="description" content="Carnicería de cerdo a domicilio en Bucaramanga, Floridablanca, Girón, Piedecuesta y La Cumbre. Costilla, lomo, chuleta, bondiola, chorizos y más. Pide por WhatsApp de 5 a.m. a 8 p.m.">
+  <meta name="description" content="Carnicería de cerdo a domicilio en Bucaramanga, Floridablanca, Girón, Piedecuesta y La Cumbre. Arma tu pedido de costilla, lomo, chuleta, bondiola, chorizos y más, y envíalo por WhatsApp de 5 a.m. a 8 p.m.">
   <meta name="theme-color" content="#5e0b10">
   <link rel="icon" href="img/logo-160.png" type="image/png">
-  <!-- TODO: con la URL final de GitHub Pages, añadir <link rel="canonical"> y og:url, y poner og:image con URL absoluta -->
+  <!-- TODO: con la URL final, añadir <link rel="canonical"> y og:url, y poner og:image con URL absoluta -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CO">
   <meta property="og:title" content="Porky's ¡Qué Cho! | Carne de cerdo a domicilio">
-  <meta property="og:description" content="Cerdo a domicilio en el área metropolitana de Bucaramanga. Pide por WhatsApp.">
+  <meta property="og:description" content="Arma tu pedido de cerdo y envíalo por WhatsApp. Domicilio en el área metropolitana de Bucaramanga.">
   <meta property="og:image" content="img/logo-600.png">
 
   <script>document.documentElement.classList.add('js');</script>
@@ -50,7 +50,8 @@
         <a href="#pedir">Cómo pedir</a>
         <a href="#nosotros">Nosotros</a>
       </nav>
-      <a class="btn btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir</a>
+      <!-- Sin JavaScript es un enlace directo a WhatsApp; con JavaScript abre "Mi pedido" -->
+      <a class="btn btn-peq" id="btn-pedido" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir</a>
     </div>
   </header>
 
@@ -61,10 +62,10 @@
         <div>
           <span class="kicker">Carnicería de cerdo</span>
           <h1>Carne de cerdo <em>a domicilio</em> en Bucaramanga</h1>
-          <p class="lema">Costilla, lomo, chuleta, bondiola, chorizos y mucho más. Llegamos a toda el área metropolitana.</p>
+          <p class="lema">Arma tu pedido con lo que necesitas y envíalo por WhatsApp. Llegamos a toda el área metropolitana.</p>
           <div class="acciones">
-            <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Pedir por WhatsApp</a>
-            <a class="btn btn-sec" href="#catalogo">Ver cortes y precios</a>
+            <a class="btn btn-wa" href="#catalogo">Armar mi pedido</a>
+            <a class="btn btn-sec" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Escribir por WhatsApp</a>
           </div>
         </div>
         <div class="hero-logo">
@@ -79,13 +80,13 @@
         <ul>
           <li class="pegatina"><span class="disco"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>Domicilio en toda el área metropolitana</li>
           <li class="pegatina"><span class="disco"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Todos los días, de 5 a.m. a 8 p.m.</li>
-          <li class="pegatina"><span class="disco"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg></span>Pides por WhatsApp, sin complicaciones</li>
+          <li class="pegatina"><span class="disco"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg></span>Armas tu pedido y lo envías por WhatsApp</li>
         </ul>
       </div>
       <svg class="ola ola--rojo" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 260 0 480 90 760 44 C 1000 6 1240 80 1440 40 L1440 90 L0 90 Z"/></svg>
     </section>
 
-    <!-- COMBO: se edita seguido. Cambia el título, la lista, el precio (.precio-combo) y la foto (img/combo-especial.jpg). -->
+    <!-- COMBO: se edita seguido. Cambia el título, la lista, el precio (data-precio y .precio-combo) y la foto (img/combo-especial.jpg). -->
     <section class="combo rayos-rojo" id="combo">
       <div class="contenedor">
         <div class="foto">
@@ -103,71 +104,80 @@
             <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Costilla, 1 lb</li>
             <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tocino carnudo, 1 lb</li>
           </ul>
-          <div class="combo-compra">
+          <div class="combo-compra" data-producto data-id="combo" data-nombre="Combo especial" data-precio="50000" data-unidad="combo" data-paso="1" data-inicio="1">
             <p class="precio-combo"><small>¡Por solo!</small>$50.000</p>
-            <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20el%20combo%20especial%20de%20%2450.000" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Pedir el combo</a>
+            <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20el%20combo%20especial%20de%20%2450.000" target="_blank" rel="noopener">Pedir el combo</a>
           </div>
         </div>
       </div>
       <svg class="ola ola--crema" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 90 480 0 720 40 C 960 80 1200 10 1440 45 L1440 90 L0 90 Z"/></svg>
     </section>
 
+    <!-- CATÁLOGO: cada producto lleva data-precio (por libra o unidad), data-paso (cuánto suma cada + ) y data-inicio (cantidad al agregar). -->
     <section class="catalogo" id="catalogo">
       <div class="contenedor">
         <span class="etiqueta">Precios por libra</span>
-        <h2>Nuestros cortes</h2>
-        <p class="subtitulo">Escoge, escríbenos y te lo llevamos a la casa.</p>
+        <h2>Arma tu pedido</h2>
+        <p class="subtitulo">Elige la cantidad de cada corte y, cuando termines, envía tu pedido por WhatsApp.</p>
 
         <div class="rejilla">
-          <article class="tarjeta">
-            <div class="foto"><img src="img/costilla-cerdo.jpg" alt="Costilla de cerdo cruda sobre tabla de madera" style="object-position:50% 100%" width="700" height="560" loading="lazy"><span class="precio-sello">$10.000<small> /lb</small></span></div>
+          <article class="tarjeta" data-producto data-id="costilla" data-nombre="Costilla" data-precio="10000" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/costilla-cerdo.jpg" alt="Costilla de cerdo sazonada sobre una tabla de madera" width="800" height="600" loading="lazy"><span class="precio-sello">$10.000<small> /lb</small></span></div>
             <div class="cuerpo">
               <h3>Costilla</h3>
               <p>Perfecta para la parrilla o el horno.</p>
               <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20costilla" target="_blank" rel="noopener">Pedir costilla</a>
             </div>
           </article>
-          <article class="tarjeta">
-            <div class="foto"><img src="img/lomo-cerdo.jpg" alt="Lomo de cerdo en filetes con romero y pimienta" style="object-position:0% 50%" width="700" height="560" loading="lazy"><span class="precio-sello">$11.000<small> /lb</small></span></div>
+          <article class="tarjeta" data-producto data-id="lomo" data-nombre="Lomo" data-precio="11000" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/lomo-cerdo.jpg" alt="Lomo de cerdo crudo en trozos sobre una tabla" width="800" height="600" loading="lazy"><span class="precio-sello">$11.000<small> /lb</small></span></div>
             <div class="cuerpo">
               <h3>Lomo</h3>
               <p>Tierno y magro, ideal para asar o apanar.</p>
               <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20lomo" target="_blank" rel="noopener">Pedir lomo</a>
             </div>
           </article>
-          <article class="tarjeta">
-            <div class="foto"><img src="img/chuleta-cerdo.jpg" alt="Chuletas de cerdo sobre tabla de madera con cebolla" style="object-position:50% 100%" width="700" height="640" loading="lazy"><span class="precio-sello">$9.500<small> /lb</small></span></div>
+          <article class="tarjeta" data-producto data-id="chuleta" data-nombre="Chuleta" data-precio="9500" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/chuleta-cerdo.jpg" alt="Chuletas de cerdo crudas sobre una tabla de madera" width="800" height="600" loading="lazy"><span class="precio-sello">$9.500<small> /lb</small></span></div>
             <div class="cuerpo">
               <h3>Chuleta</h3>
               <p>Jugosa y con sabor, para freír o a la plancha.</p>
               <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20chuleta" target="_blank" rel="noopener">Pedir chuleta</a>
             </div>
           </article>
-          <article class="tarjeta">
-            <div class="foto"><img src="img/bondiola-cerdo.jpg" alt="Bondiola de cerdo cruda con ají y especias" style="object-position:50% 100%" width="700" height="630" loading="lazy"><span class="precio-sello">$9.500<small> /lb</small></span></div>
+          <article class="tarjeta" data-producto data-id="bondiola" data-nombre="Bondiola" data-precio="9500" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/bondiola-cerdo.jpg" alt="Bondiola de cerdo cruda con romero sobre una tabla" width="800" height="600" loading="lazy"><span class="precio-sello">$9.500<small> /lb</small></span></div>
             <div class="cuerpo">
               <h3>Bondiola</h3>
               <p>Con veta de grasa: suave y llena de sabor.</p>
               <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20bondiola" target="_blank" rel="noopener">Pedir bondiola</a>
             </div>
           </article>
-          <article class="tarjeta">
-            <div class="foto"><img src="img/pierna-cerdo.jpg" alt="Pierna de cerdo fresca cortada en nuestra cocina" style="object-position:50% 30%" width="700" height="1244" loading="lazy"><span class="precio-sello">$9.500<small> /lb</small></span></div>
+          <article class="tarjeta" data-producto data-id="pierna" data-nombre="Pierna" data-precio="9500" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/pierna-cerdo.jpg" alt="Pierna de cerdo con piel sobre una tabla de madera" width="800" height="600" loading="lazy"><span class="precio-sello">$9.500<small> /lb</small></span></div>
             <div class="cuerpo">
               <h3>Pierna</h3>
               <p>Rinde para toda la familia.</p>
               <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20pierna" target="_blank" rel="noopener">Pedir pierna</a>
             </div>
           </article>
-          <article class="tarjeta">
-            <div class="foto"><img src="img/codillo-cerdo.jpg" alt="Codillo de cerdo crudo sobre plato de madera" width="700" height="560" loading="lazy"><span class="precio-sello">$6.000<small> /lb</small></span></div>
+          <article class="tarjeta" data-producto data-id="panceta" data-nombre="Panceta" data-precio="11000" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/panceta-cerdo.jpg" alt="Tiras de panceta de cerdo sobre una tabla" width="800" height="600" loading="lazy"><span class="precio-sello">$11.000<small> /lb</small></span></div>
+            <div class="cuerpo">
+              <h3>Panceta</h3>
+              <p>Crujiente al horno o a la plancha.</p>
+              <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20panceta" target="_blank" rel="noopener">Pedir panceta</a>
+            </div>
+          </article>
+          <article class="tarjeta" data-producto data-id="codillo" data-nombre="Codillo" data-precio="6000" data-unidad="lb" data-paso="0.5" data-inicio="1">
+            <div class="foto"><img src="img/codillo-cerdo.jpg" alt="Codillo de cerdo servido en un plato" width="800" height="600" loading="lazy"><span class="precio-sello">$6.000<small> /lb</small></span></div>
             <div class="cuerpo">
               <h3>Codillo</h3>
               <p>Ideal para sopas, sancochos y frijoles.</p>
               <a class="btn btn-wa btn-peq" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20codillo" target="_blank" rel="noopener">Pedir codillo</a>
             </div>
           </article>
-          <article class="tarjeta">
+          <article class="tarjeta" data-producto data-id="chorizos" data-nombre="Chorizos" data-precio="500" data-unidad="und" data-paso="5" data-inicio="10">
             <div class="foto"><img src="img/chorizos-colgados.jpg" alt="Chorizos colgados con las montañas de Santander al fondo" style="object-position:50% 45%" width="800" height="1067" loading="lazy"><span class="precio-sello">$500<small> /und</small></span></div>
             <div class="cuerpo">
               <h3>Chorizos</h3>
@@ -180,18 +190,17 @@
         <div class="otros">
           <h3>Y también tenemos</h3>
           <ul>
-            <li>Chicharrón <b>$7.000</b></li>
-            <li>Panceta <b>$11.000</b></li>
-            <li>Osobuco <b>$6.000</b></li>
-            <li>Empella <b>$7.000</b></li>
-            <li>Cabeza <b>$5.000</b></li>
-            <li>Pezuña <b>$5.000</b></li>
-            <li>Cojín <b>$7.000</b></li>
-            <li>Cuero <b>$7.000</b></li>
-            <li>Cola <b>$5.000</b></li>
-            <li>Piel <b>$3.000</b></li>
+            <li data-producto data-id="chicharron" data-nombre="Chicharrón" data-precio="7000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Chicharrón</span> <b>$7.000</b></li>
+            <li data-producto data-id="osobuco" data-nombre="Osobuco" data-precio="6000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Osobuco</span> <b>$6.000</b></li>
+            <li data-producto data-id="empella" data-nombre="Empella" data-precio="7000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Empella</span> <b>$7.000</b></li>
+            <li data-producto data-id="cabeza" data-nombre="Cabeza" data-precio="5000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Cabeza</span> <b>$5.000</b></li>
+            <li data-producto data-id="pezuna" data-nombre="Pezuña" data-precio="5000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Pezuña</span> <b>$5.000</b></li>
+            <li data-producto data-id="cojin" data-nombre="Cojín" data-precio="7000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Cojín</span> <b>$7.000</b></li>
+            <li data-producto data-id="cuero" data-nombre="Cuero" data-precio="7000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Cuero</span> <b>$7.000</b></li>
+            <li data-producto data-id="cola" data-nombre="Cola" data-precio="5000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Cola</span> <b>$5.000</b></li>
+            <li data-producto data-id="piel" data-nombre="Piel" data-precio="3000" data-unidad="lb" data-paso="0.5" data-inicio="1"><span class="o-nombre">Piel</span> <b>$3.000</b></li>
           </ul>
-          <p class="nota">Precios por libra en pesos colombianos. Pueden cambiar: confirma por WhatsApp.</p>
+          <p class="nota">Precios por libra en pesos colombianos. Pueden cambiar: te confirmamos por WhatsApp.</p>
         </div>
       </div>
       <svg class="ola ola--rosa" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 260 0 480 90 760 44 C 1000 6 1240 80 1440 40 L1440 90 L0 90 Z"/></svg>
@@ -202,9 +211,9 @@
         <span class="etiqueta">Fácil y rápido</span>
         <h2>Cómo pedir</h2>
         <ol class="pasos">
-          <li><b>Escríbenos por WhatsApp</b><br>Dinos qué cortes quieres y cuántas libras.</li>
-          <li><b>Confirmamos tu pedido</b><br>Te decimos el total y la hora de entrega.</li>
-          <li><b>Te lo llevamos</b><br>Recibes tu pedido en la puerta de tu casa.</li>
+          <li><b>Arma tu pedido</b><br>Elige los cortes y la cantidad en libras o unidades.</li>
+          <li><b>Envíalo por WhatsApp</b><br>Se abre el chat con tu pedido ya escrito. Solo lo envías.</li>
+          <li><b>Confirmamos y te lo llevamos</b><br>Te decimos el total final y la hora de entrega.</li>
         </ol>
         <p><b>Entregamos en toda el área metropolitana de Bucaramanga:</b></p>
         <ul class="zonas">
@@ -216,7 +225,7 @@
 
     <section class="nosotros rayos-guinda" id="nosotros">
       <div class="contenedor">
-        <div class="foto"><img src="img/chorizos-asados.jpg" alt="Chorizos asados con cebolla y ajo" width="700" height="728" loading="lazy"></div>
+        <div class="foto"><img src="img/nosotros-chorizos.jpg" alt="Chorizo en rodajas servido en una sartén" width="800" height="600" loading="lazy"></div>
         <div>
           <span class="etiqueta">Quiénes somos</span>
           <h2>Somos Porky's ¡Qué Cho!</h2>
@@ -234,7 +243,7 @@
           <h2>¿Listo para pedir?</h2>
           <p>Atendemos todos los días de 5 a.m. a 8 p.m.</p>
           <a class="telefono" href="tel:+573163500637">316 350 0637</a><br>
-          <a class="btn btn-wa" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Escribir por WhatsApp</a>
+          <a class="btn btn-wa" href="#catalogo">Armar mi pedido</a>
         </div>
       </div>
     </section>
@@ -245,10 +254,65 @@
     <p><b>Porky's ¡Qué Cho!</b> · Carnicería de cerdo</p>
     <p>Bucaramanga, Floridablanca, Girón, Piedecuesta y La Cumbre</p>
     <p><a href="tel:+573163500637">316 350 0637</a> · 5 a.m. a 8 p.m.</p>
+    <details class="creditos">
+      <summary>Créditos de las fotos</summary>
+      <p>Fotos de productos publicadas en <a href="https://unsplash.com/es" target="_blank" rel="noopener">Unsplash</a> bajo la licencia de Unsplash (uso libre, sin atribución obligatoria):</p>
+      <ul>
+        <li>Costilla: Egor Gordeev · <a href="https://unsplash.com/es/fotos/tabla-de-cortar-de-madera-marron-y-negra-Ziwt4PXM-9U" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Lomo: Xavier von Erlach · <a href="https://unsplash.com/es/fotos/manos-preparando-carne-cruda-con-ajo-y-hierbas-Ko3UaGt3EYw" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Chuleta: Towfiqu barbhuiya · <a href="https://unsplash.com/es/fotos/carne-en-rodajas-en-tabla-de-cortar-de-madera-marron-9J9uxuoIM9A" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Bondiola: Towfiqu barbhuiya · <a href="https://unsplash.com/es/fotos/carne-cruda-en-una-tabla-de-cortar-de-madera-marron-_3KR9K0xRWs" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Pierna: yang louie · <a href="https://unsplash.com/es/fotos/un-gran-trozo-de-carne-sentado-encima-de-una-tabla-de-cortar-de-madera-Kr-atZTsyAo" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Panceta: KG Baek · <a href="https://unsplash.com/es/fotos/un-monton-de-carne-cruda-sentada-encima-de-una-tabla-de-cortar-aeE-Y7SVVR4" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Codillo: Yuhan Du · <a href="https://unsplash.com/es/fotos/alimentos-cocinados-en-plato-de-ceramica-blanca-tDU3ucyv0KQ" target="_blank" rel="noopener">ver foto</a></li>
+        <li>Chorizo en rodajas: Marlom Veloso · <a href="https://unsplash.com/es/fotos/un-plato-lleno-de-perritos-calientes-en-un-mostrador-4pkdacQPZec" target="_blank" rel="noopener">ver foto</a></li>
+      </ul>
+    </details>
     <p>© <span id="anio">2026</span> Porky's ¡Qué Cho!</p>
   </footer>
 
+  <!-- Barra del pedido: aparece cuando hay productos agregados -->
+  <div class="barra-pedido" id="barra-pedido" hidden>
+    <button type="button" class="btn btn-sec" id="barra-abrir" aria-haspopup="dialog">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+      <span id="barra-texto" aria-live="polite">0 productos · $0</span>
+      <span class="ver">Ver pedido</span>
+    </button>
+  </div>
+
   <a class="btn btn-wa wa-flotante" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Pedir</a>
+
+  <!-- Ventana "Mi pedido" -->
+  <dialog id="dialogo-pedido" class="dialogo" aria-labelledby="titulo-pedido">
+    <div class="dialogo-caja">
+      <div class="dialogo-cab">
+        <h2 id="titulo-pedido">Mi pedido</h2>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar ventana">×</button>
+      </div>
+
+      <p class="vacio" id="vacio">Aún no has agregado nada. Elige tus cortes en el catálogo y aparecerán aquí.</p>
+      <ul class="lineas" id="lineas"></ul>
+
+      <div id="resumen" hidden>
+        <p class="total-fila"><span>Subtotal estimado</span><b id="total">$0</b></p>
+        <p class="aviso">El valor final depende del peso exacto de cada corte. El domicilio te lo confirmamos por WhatsApp.</p>
+
+        <div class="datos">
+          <label for="cli-nombre">Tu nombre <span>(opcional)</span></label>
+          <input id="cli-nombre" type="text" autocomplete="name">
+          <label for="cli-direccion">Dirección, barrio y municipio <span>(opcional)</span></label>
+          <input id="cli-direccion" type="text" autocomplete="street-address">
+          <label for="cli-notas">Notas <span>(opcional)</span></label>
+          <textarea id="cli-notas" rows="2" placeholder="Ej: cortar la costilla en tiras"></textarea>
+        </div>
+      </div>
+
+      <div class="dialogo-acciones">
+        <button type="button" class="btn btn-wa" id="enviar" disabled><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Enviar pedido por WhatsApp</button>
+        <button type="button" class="btn-texto" id="vaciar">Vaciar pedido</button>
+      </div>
+    </div>
+  </dialog>
 
   <script src="js/main.js" defer></script>
 </body>
