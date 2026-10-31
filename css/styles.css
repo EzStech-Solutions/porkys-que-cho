@@ -317,3 +317,21 @@ section { position: relative; padding: 4rem 0; }
   .combo-card { flex: none; }
   .js .combos-puntos { display: none; }
 }
+
+/* Menú de navegación en celular: botón ☰ que despliega los apartados */
+.menu-boton { display: none; }
+.menu-boton .ic-cerrar { display: none; }
+.menu-boton[aria-expanded="true"] .ic-abrir { display: none; }
+.menu-boton[aria-expanded="true"] .ic-cerrar { display: block; }
+@media (max-width: 759px) {
+  .js .menu-boton { display: grid; place-items: center; flex: none; width: 44px; height: 44px; padding: 0; border-radius: 12px; border: 2px solid var(--amarillo); background: transparent; color: var(--amarillo); cursor: pointer; }
+  .menu-boton .icono { width: 1.6rem; height: 1.6rem; }
+  .js .menu { position: absolute; left: 0; right: 0; top: 100%; display: none; flex-direction: column; gap: 0; padding: .3rem 1rem 1rem; background: var(--guinda); border-bottom: 4px solid var(--amarillo); box-shadow: 0 12px 20px rgba(0, 0, 0, .35); }
+  .js .menu.abierto { display: flex; }
+  .js .menu a { padding: .95rem .2rem; font-size: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, .18); }
+  .js .menu a:last-child { border-bottom: 0; }
+  .cabecera .btn-peq { padding: .4rem .75rem; }
+  /* Sin JavaScript no hay botón: los apartados quedan en una segunda fila */
+  html:not(.js) .cabecera .contenedor { flex-wrap: wrap; }
+  html:not(.js) .menu { display: flex; order: 3; width: 100%; justify-content: space-between; padding-bottom: .5rem; }
+}

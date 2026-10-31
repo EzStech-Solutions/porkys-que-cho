@@ -207,6 +207,28 @@ $('#enviar').addEventListener('click', () => {
 
 pintar();
 
+/* ---------- Menú desplegable (celular) ---------- */
+const menuBoton = $('#menu-boton');
+const menu = $('#menu');
+if (menuBoton && menu) {
+  const cerrarMenu = () => {
+    menu.classList.remove('abierto');
+    menuBoton.setAttribute('aria-expanded', 'false');
+    menuBoton.setAttribute('aria-label', 'Abrir menú');
+  };
+  menuBoton.addEventListener('click', () => {
+    const abierto = menu.classList.toggle('abierto');
+    menuBoton.setAttribute('aria-expanded', String(abierto));
+    menuBoton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  });
+  $$('a', menu).forEach((a) => a.addEventListener('click', cerrarMenu));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarMenu(); });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !menuBoton.contains(e.target)) cerrarMenu();
+  });
+  window.matchMedia('(min-width: 760px)').addEventListener('change', cerrarMenu);
+}
+
 /* ---------- Carrusel de combos (celular): puntos que siguen y llevan a cada combo ---------- */
 const combos = $('#combos');
 const puntos = $$('.punto');

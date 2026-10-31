@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="css/styles.css?v=10">
 
   <script type="application/ld+json">
   {
@@ -44,7 +44,7 @@
   <header class="cabecera">
     <div class="contenedor">
       <a class="marca" href="#inicio"><img src="img/logo-160.png" alt="" width="54" height="54">Porky's ¡Qué Cho!</a>
-      <nav class="menu" aria-label="Principal">
+      <nav class="menu" id="menu" aria-label="Principal">
         <a href="#combo">Combo</a>
         <a href="#catalogo">Catálogo</a>
         <a href="#pedir">Cómo pedir</a>
@@ -52,6 +52,10 @@
       </nav>
       <!-- Sin JavaScript es un enlace directo a WhatsApp; con JavaScript abre "Mi pedido" -->
       <a class="btn btn-peq" id="btn-pedido" href="https://wa.me/573163500637?text=Hola%20Porky's%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir</a>
+      <button type="button" class="menu-boton" id="menu-boton" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg class="icono ic-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icono ic-cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
   </header>
 
@@ -349,6 +353,6 @@
     </div>
   </dialog>
 
-  <script src="js/main.js?v=8" defer></script>
+  <script src="js/main.js?v=10" defer></script>
 </body>
 </html>
