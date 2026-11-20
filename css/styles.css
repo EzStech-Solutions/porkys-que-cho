@@ -81,7 +81,7 @@ section { position: relative; padding: 4rem 0; }
 .inicio .lema { font-size: 1.2rem; max-width: 42ch; margin: 0 auto 1.4rem; font-weight: 700; }
 .inicio .btn-sec { background: #fff; }
 .inicio .acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; }
-.hero-logo { position: relative; order: -1; width: min(330px, 76vw); margin-inline: auto; }
+.hero-logo { position: relative; order: -1; width: min(250px, 62vw); margin-inline: auto; }
 .hero-logo img { width: 100%; filter: drop-shadow(0 8px 10px rgba(94,11,16,.28)); }
 
 /* Franja de pegatinas */
@@ -336,3 +336,10 @@ section { position: relative; padding: 4rem 0; }
   html:not(.js) .menu { display: flex; order: 3; width: 100%; justify-content: space-between; padding-bottom: .5rem; }
 }
 .precio-sello--consulta { font-size: 1.1rem; padding-inline: .7rem; }
+
+/* Hero: un solo botón grande y un enlace discreto para dudas */
+.btn-grande { font-size: 1.2rem; padding: .95rem 1.8rem; }
+.enlace-duda { align-self: center; font-weight: 800; color: var(--guinda); text-decoration: underline; text-underline-offset: 3px; padding: .75rem .4rem; min-height: 44px; display: inline-flex; align-items: center; }
+/* Sugerencia dentro de "Mi pedido" */
+.sugerencia { display: flex; align-items: center; justify-content: space-between; gap: .8rem; background: var(--crema); border: 2px dashed var(--rojo); border-radius: 14px; padding: .6rem .8rem; margin: 0 0 1rem; font-weight: 700; }
+.sugerencia[hidden] { display: none; }

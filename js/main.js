@@ -141,6 +141,10 @@ function pintar() {
   $('#resumen').hidden = n === 0;
   $('#enviar').disabled = n === 0;
   pintarFilas();
+  // Sugerencia: quien pide un combo y no lleva chorizos puede sumarlos con un toque
+  const hayCombo = Object.keys(pedido).some((id) => id.startsWith('combo'));
+  const chorizos = productos.get('chorizos');
+  $('#sugerencia').hidden = !(hayCombo && chorizos && !pedido.chorizos);
 }
 
 function cambiar(id, cantidad) {
@@ -149,6 +153,11 @@ function cambiar(id, cantidad) {
   guardar();
   pintar();
 }
+
+$('#sugerencia-agregar').addEventListener('click', () => {
+  const c = productos.get('chorizos');
+  if (c) cambiar(c.id, c.inicio);
+});
 
 function abrirPedido(e) {
   if (e) e.preventDefault();
