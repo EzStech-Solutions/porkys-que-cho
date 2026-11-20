@@ -335,3 +335,4 @@ section { position: relative; padding: 4rem 0; }
   html:not(.js) .cabecera .contenedor { flex-wrap: wrap; }
   html:not(.js) .menu { display: flex; order: 3; width: 100%; justify-content: space-between; padding-bottom: .5rem; }
 }
+.precio-sello--consulta { font-size: 1.1rem; padding-inline: .7rem; }

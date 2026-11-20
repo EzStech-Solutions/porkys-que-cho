@@ -3,3 +3,6 @@
 originales/
 Thumbs.db
 .DS_Store
+*.msix
+*.exe
+*.zip
